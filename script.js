@@ -93,11 +93,20 @@ function clearPopOutContent() {
 }
 
 // Get the audio element
-const bgMusic = document.getElementById('bg-music');
+const bgMusic = document.getElementById('bgMusic');
 
 // Play music on user interaction
 function startMusic() {
     bgMusic.play().catch((error) => console.error('Audio playback failed:', error));
+}
+
+// Play background music on the final step
+if (stepId === 'final-step') {
+    bgMusic.play().catch((error) =>
+        console.error("Audio playback failed due to user interaction policies:", error)
+    );
+
+    startTypewritingEffect(); // Trigger the typewriting effect
 }
 
 // Attach to the first interaction button
@@ -107,7 +116,7 @@ function proceedConfession() {
     clearPopOutContent(); // Remove images/videos
     document.querySelectorAll('.step').forEach((step) => step.classList.add('hidden'));
     document.getElementById('step-final').classList.remove('hidden');
-    document.getElementById('background-music').play();
+    document.getElementById('bgMusic').play();
 
     const confessionText = `Hey, I know this is like my third time confessing to you, and Im not sure if I even have a chance, but thats not important. What matters is that you have a chance with me. <3 Eme HAHAHA. So, yeah, this is just a yolo confession. I thought of doing something unique, and since I love comsci, why not confess this way, right?
 
