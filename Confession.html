@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confession Page</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div id="step-1" class="step">
+            <h1>Hi, are you single? </h1>
+            <div class="button-group">
+                <button onclick="nextStep('step-2', true)">Yes</button>
+                <button onclick="nextStep('step-1', false)">No</button>
+            </div>
+        </div>
+
+        <div id="step-2" class="step hidden">
+            <h1>Do you like anyone right now? 😳</h1>
+            <div class="button-group">
+                <button onclick="nextStep('step-3', false)">No</button>
+                <button onclick="nextStep('step-reject', true)">Yes</button>
+            </div>
+        </div>
+
+        <div id="step-reject" class="step hidden">
+            <h1>Hi po, crush kita reject mo na ako pls </h1>
+            <p class="small-text">May chance bako 😅</p>
+            <div id="buttons-container" class="button-group">
+                <button id="yes-button" onclick="proceedConfession()">Yes</button>
+                <button id="no-button" onclick="moveNoButton()">No</button>
+            </div>
+            <div id="popout-container"></div>
+        </div>
+        
+
+        <div id="step-final" class="step hidden">
+            <div id="typewriter" class="typewriter"></div>
+            <audio id="background-music" loop>
+                <source src="be with you.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+            <button id="next-button" onclick="showFinalPage()">Next</button>
+        </div>
+
+        <div id="step-end" class="step hidden">
+            <div class="images-placeholder">
+                <!-- Placeholder for blush images -->
+                <img src="blush1.gif" alt="Blush Image 1">
+                <img src="blush2.webp" alt="Blush Image 2">
+                <img src="blush3.jpg" alt="Blush Image 3">
+            </div>
+            <h1>Ready na mga song ni daniel caesar, pic mo nalang kulang🥰</h1>
+            <p>yieee, chat mo na ako usap na us</p>
+            <p class="small-text">Oki tank yu fur b ing in my layf ur da vest, onki bai <3</p>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
