@@ -3,7 +3,7 @@ let displayedImages = [];
 
 // Proceed to the next step
 function nextStep(stepId, proceed) {
-    if (!proceed) return alert("Oh, that's sad to hear! 😔");
+    if (!proceed) return alert("luh, wag na pala 😔");
     document.querySelectorAll('.step').forEach((step) => step.classList.add('hidden'));
     document.getElementById(stepId).classList.remove('hidden');
 }
@@ -92,6 +92,16 @@ function clearPopOutContent() {
     document.querySelectorAll('.popout-item').forEach((item) => item.remove());
 }
 
+// Get the audio element
+const bgMusic = document.getElementById('bg-music');
+
+// Play music on user interaction
+function startMusic() {
+    bgMusic.play().catch((error) => console.error('Audio playback failed:', error));
+}
+
+// Attach to the first interaction button
+document.querySelector('button').addEventListener('click', startMusic, { once: true });
 // Proceed to the confession
 function proceedConfession() {
     clearPopOutContent(); // Remove images/videos
