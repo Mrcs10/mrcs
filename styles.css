@@ -16,7 +16,6 @@ audio {
     display: none; /* Hide the audio controls */
 }
 
-
 .container {
     max-width: 500px;
     padding: 20px;
@@ -35,11 +34,39 @@ audio {
     display: block;
 }
 
+/* Envelope */
+.envelope {
+    cursor: pointer;
+    display: inline-block;
+    margin-top: 20px;
+    animation: wiggle 1s ease-in-out infinite;
+}
+
+.envelope img {
+    width: 150px;
+    height: 100px;
+    transition: transform 0.3s;
+}
+
+.envelope:hover img {
+    transform: scale(1.1);
+}
+
+/* Envelope Wiggle Animation */
+@keyframes wiggle {
+    0% { transform: rotate(0deg); }
+    25% { transform: rotate(5deg); }
+    50% { transform: rotate(-5deg); }
+    75% { transform: rotate(5deg); }
+    100% { transform: rotate(0deg); }
+}
+
 /* Buttons */
 .button-group {
     margin-top: 20px;
 }
 
+/* Button Hover Effects */
 button {
     background-color: #007bff;
     color: white;
@@ -49,7 +76,7 @@ button {
     border-radius: 5px;
     margin: 10px;
     cursor: pointer;
-    transition: all 0.3s;
+    transition: all 0.3s ease;
 }
 
 button:hover {
@@ -66,56 +93,48 @@ button:hover {
 
 #yes-button {
     background-color: #28a745;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for size and shadow */
 }
 
 #yes-button:hover {
     background-color: #218838;
 }
 
-#next-button {
-    margin-top: 30px;
+/* Make the "Yes" button more attractive */
+#yes-button.attract {
+    transform: scale(1.2); /* Make the "Yes" button bigger */
+    box-shadow: 0 0 25px rgba(40, 167, 69, 1); /* Increase glowing effect */
 }
+
+/* No button movement */
+#no-button {
+    transition: transform 0.5s ease;
+}
+
+/* Random position for the "No" button */
+#no-button {
+    transition: transform 0.5s ease;
+}
+
+@keyframes moveButton {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-30px); }
+    50% { transform: translateX(0); }
+    75% { transform: translateX(30px); }
+    100% { transform: translateX(0); }
+}
+
+/* Random position for the "No" button */
+#no-button {
+    transition: transform 0.5s ease;
+}
+
 
 /* Typography */
 h1 {
     font-size: 1.5rem;
     margin-bottom: 15px;
     color: #444;
-}
-
-/* Pop-out Item Styling */
-.popout-item {
-    position: absolute;
-    max-width: 150px; /* Limit image size to prevent large images */
-    max-height: 150px;
-    border-radius: 8px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-    object-fit: contain; /* Show the full image */
-    animation: fadeIn 0.5s ease;
-    background-color: #fff; /* Add background for better visibility */
-}
-
-/* Fade-in Animation for Pop-out Items */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: scale(0.8);
-    }
-    to {
-        opacity: 1;
-        transform: scale(1);
-    }
-}
-
-p {
-    font-size: 1rem;
-    margin: 10px 0;
-    color: #555;
-}
-
-.small-text {
-    font-size: 0.9rem;
-    color: #777;
 }
 
 /* Typewriter Effect */
@@ -150,3 +169,5 @@ p {
         transform: translateY(0);
     }
 }
+
+
