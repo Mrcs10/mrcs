@@ -15,17 +15,17 @@ function startMusic() {
 
 // Function to handle the typewriter effect for the confession letter
 function startTypewritingEffect() {
-    const confessionText = `Hi Ivy!
+    const confessionText = `Hi Ivy my idle!
      I know we've only been talking for a while, but I just wanted to let you know how much you mean to me 🤞
-    EVERYTHING ABOUT YOU JUST MAKE ME FEEL SO HAPPY <33 hehe, you always make me laugh, and I find genuine happiness talking to you 😭💛
+    EVERYTHING ABOUT YOU JUST MAKES ME FEEL SO HAPPY <33 hehe, you always make me laugh, and I find genuine happiness talking to you 💛
     
     I LOVE YOUR EYES, SMILE AND YOU'RE JUST AMAZING OVERALL 😙🤍
     
-    was wondering if....
-     Can I court you?.... 
+    Was wondering if....
+    Can I court you? 😊😊
      
     hihi 
-    With all my heart, Marcus`;
+    Love, Marcus`;
 
     const typewriter = document.getElementById('typewriter');
     let index = 0;
