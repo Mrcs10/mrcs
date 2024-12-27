@@ -3,15 +3,17 @@ function openLetter() {
     document.querySelectorAll('.step').forEach((step) => step.classList.add('hidden'));
     document.getElementById('step-final').classList.remove('hidden');
     document.querySelector('.envelope').style.animation = 'none'; // Remove the wiggle animation
-    startMusic(); // Start the background music
     startTypewritingEffect(); // Trigger the typewriting effect
 }
 
 // Function to play background music
-function startMusic() {
-    const bgMusic = document.getElementById('bgMusic');
-    bgMusic.play().catch((error) => console.error('Audio playback failed:', error));
-}
+const playButton = document.getElementById('playButton');
+const bgMusic = document.getElementById('bgMusic');
+
+playButton.addEventListener('click', function() {
+    bgMusic.play();
+    playButton.style.display = 'none';
+});
 
 // Function to handle the typewriter effect for the confession letter
 function startTypewritingEffect() {
